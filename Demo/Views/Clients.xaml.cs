@@ -22,7 +22,7 @@ namespace Demo.Views
         public Clients()
         {
             DemoDbContext context = new DemoDbContext();
-            IClientDataProvider clientDataProvider = new ClientDataProvider();
+            IClientDataProvider clientDataProvider = new ClientDbDataProvider(context);
 
             ViewModel = new MainClientsViewModel(clientDataProvider);
             InitializeComponent();
